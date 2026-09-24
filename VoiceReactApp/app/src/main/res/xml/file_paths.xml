@@ -1,5 +1,0 @@
-<!-- 07 - FILEPROVIDER PATHS (private app storage only) -->
-<paths xmlns:android="http://schemas.android.com/apk/res/android">
-    <files-path name="clips" path="clips/" />
-    <files-path name="videos" path="videos/" />
-</paths>
