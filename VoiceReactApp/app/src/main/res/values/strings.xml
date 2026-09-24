@@ -1,6 +1,0 @@
-<resources>
-    <string name="app_name">VoiceReact</string>
-    <string name="mic_permission_rationale">Microphone access is needed to record your voice note.</string>
-    <string name="mic_permission_denied">Microphone permission was denied. Enable it in Settings to record.</string>
-    <string name="open_settings">Open Settings</string>
-</resources>
