@@ -1,0 +1,2 @@
+rootProject.name = "VoiceReactApp"
+include ':app'
