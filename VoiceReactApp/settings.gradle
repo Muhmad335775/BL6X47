@@ -1,3 +1,0 @@
-// 02 - GRADLE SETTINGS
-rootProject.name = "VoiceReactApp"
-include ':app'
