@@ -1,0 +1,63 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <!-- Invisible anchor: reserves the exact original WhatsApp-position footprint,
+         so siblings still line up correctly even though the real button view
+         below is drawn bigger (to make room for the ripple, unclipped). -->
+    <View
+        android:id="@+id/recorderAnchor"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="24dp"
+        android:layout_marginEnd="16dp"
+        android:visibility="invisible" />
+
+    <com.voicereact.app.RecorderButtonView
+        android:id="@+id/micButton"
+        android:layout_width="128dp"
+        android:layout_height="128dp"
+        android:layout_alignBottom="@id/recorderAnchor"
+        android:layout_alignEnd="@id/recorderAnchor" />
+
+    <com.voicereact.app.WaveformView
+        android:id="@+id/waveform"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:visibility="invisible"
+        android:layout_toStartOf="@id/recorderAnchor"
+        android:layout_alignTop="@id/recorderAnchor"
+        android:layout_alignBottom="@id/recorderAnchor"
+        android:layout_marginEnd="16dp" />
+
+    <TextView
+        android:id="@+id/timerText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0:00"
+        android:textColor="@color/timer_text"
+        android:textSize="16sp"
+        android:visibility="invisible"
+        android:layout_toStartOf="@id/waveform"
+        android:layout_alignTop="@id/recorderAnchor"
+        android:layout_alignBottom="@id/recorderAnchor"
+        android:gravity="center_vertical"
+        android:layout_marginEnd="8dp" />
+
+    <TextView
+        android:id="@+id/cancelHint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="◀ Slide to cancel"
+        android:textColor="@color/cancel_hint"
+        android:textSize="14sp"
+        android:visibility="invisible"
+        android:layout_above="@id/recorderAnchor"
+        android:layout_alignEnd="@id/recorderAnchor"
+        android:layout_marginBottom="16dp" />
+
+</RelativeLayout>
