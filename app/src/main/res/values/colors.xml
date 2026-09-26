@@ -1,0 +1,13 @@
+<resources>
+    <color name="white">#FFFFFFFF</color>
+    <color name="mic_button">#F2FFFFFF</color>
+    <color name="mic_button_recording">#F2FFFFFF</color>
+    <color name="mic_glass_border">#66FFFFFF</color>
+    <color name="mic_glass_highlight">#B3FFFFFF</color>
+    <color name="mic_icon_color">#FF3A3A3A</color>
+    <color name="ripple">#33FFFFFF</color>
+    <color name="waveform_bar">#FF3A3A3A</color>
+    <color name="waveform_bar_dim">#663A3A3A</color>
+    <color name="timer_text">#FF3A3A3A</color>
+    <color name="cancel_hint">#FFB0B0B0</color>
+</resources>
