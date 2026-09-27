@@ -1,0 +1,6 @@
+dependencies {
+    implementation "com.google.android.filament:filament-android:1.51.5"
+    implementation "com.google.android.filament:gltfio-android:1.51.5"
+    implementation "com.google.android.filament:filament-utils-android:1.51.5"
+    implementation "com.antonkarpenko:ffmpeg-kit-full:6.0.5"
+}
