@@ -1,0 +1,32 @@
+material {
+    name : ColorGradePost,
+    parameters : [
+        { type : float, name : vignetteStrength },
+        { type : float, name : contrast },
+        { type : float, name : warmth }
+    ],
+    variables : [ vertex ],
+    vertexDomain : postprocess,
+    depthWrite : false,
+    depthCulling : false,
+    shadingModel : unlit,
+    blending : opaque
+}
+
+fragment {
+    void postProcess(inout PostProcessInputs postProcess) {
+        vec4 color = texture(materialParams_colorBuffer, variable_vertex.xy);
+
+        float c = materialParams.contrast;
+        color.rgb = ((color.rgb - 0.5) * c) + 0.5;
+
+        color.rgb += vec3(materialParams.warmth, materialParams.warmth * 0.35, -materialParams.warmth * 0.2);
+
+        vec2 uv = variable_vertex.xy - 0.5;
+        float dist = length(uv);
+        float vig = smoothstep(0.75, 0.25, dist * (1.0 + materialParams.vignetteStrength));
+        color.rgb *= mix(1.0 - materialParams.vignetteStrength * 0.6, 1.0, vig);
+
+        postProcess.color = color;
+    }
+}
